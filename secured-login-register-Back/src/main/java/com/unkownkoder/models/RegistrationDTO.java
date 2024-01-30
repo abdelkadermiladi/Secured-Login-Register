@@ -4,14 +4,17 @@ public class RegistrationDTO {
     private String username;
     private String password;
 
+    private String gender;
+
     public RegistrationDTO(){
         super();
     }
 
-    public RegistrationDTO(String username, String password){
+    public RegistrationDTO(String username, String password, String gender){
         super();
         this.username = username;
         this.password = password;
+        this.gender = gender;
     }
 
     public String getUsername(){
@@ -30,7 +33,21 @@ public class RegistrationDTO {
         this.password = password;
     }
 
-    public String toString(){
-        return "Registration info: username: " + this.username + " password: " + this.password;
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    @Override
+    public String toString() {
+        return "RegistrationDTO{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
     }
 }

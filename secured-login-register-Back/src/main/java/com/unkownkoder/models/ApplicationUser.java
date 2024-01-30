@@ -29,6 +29,8 @@ public class ApplicationUser implements UserDetails{
     private String username;
     private String password;
 
+    private String gender;
+
     @ManyToMany(fetch=FetchType.EAGER)
     @JoinTable(
             name="user_role_junction",
@@ -43,12 +45,14 @@ public class ApplicationUser implements UserDetails{
     }
 
 
-    public ApplicationUser(Integer userId, String username, String password, Set<Role> authorities) {
+    public ApplicationUser(Integer userId, String username, String password, String gender, Set<Role> authorities) {
         super();
         this.userId = userId;
         this.username = username;
         this.password = password;
+        this.gender = gender;
         this.authorities = authorities;
+
     }
 
     public Integer getUserId() {
@@ -114,4 +118,12 @@ public class ApplicationUser implements UserDetails{
         return true;
     }
 
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 }

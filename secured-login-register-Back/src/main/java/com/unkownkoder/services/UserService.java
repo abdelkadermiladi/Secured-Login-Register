@@ -19,12 +19,6 @@ public class UserService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
-
-        //if(!username.equals("Ethan")) throw new UsernameNotFoundException("Not Ethan");
-        //Set<Role> roles = new HashSet<>();
-        //roles.add(new Role(1,"USER"));
-        //return new ApplicationUser(1,"Ethan",encoder.encode("password"),roles);
-
         return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("user is not valid"));
 
     }

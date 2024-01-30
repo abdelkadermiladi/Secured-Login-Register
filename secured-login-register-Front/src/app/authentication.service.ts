@@ -18,8 +18,8 @@ export class AuthenticationService {
     return this.http.post<any>(`${this.apiUrl}/auth/login`, credentials, { headers });
   }
 
-  register(username: string, password: string): Observable<any> {
-    const credentials = { username, password };
+  register(username: string, password: string, gender: string): Observable<any> {
+    const credentials = { username, password, gender };
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.http.post<any>(`${this.apiUrl}/auth/register`, credentials, { headers });
   }
@@ -40,8 +40,4 @@ export class AuthenticationService {
     localStorage.removeItem('jwtToken');
   }
 
-  getAuthenticatedUser(headers: HttpHeaders): Observable<any> {
-    // Make a request to your secure endpoint using the stored JWT token
-    return this.http.get<any>(`${this.apiUrl}/auth/AuthenticatedUser`, { headers });
-  }
 }

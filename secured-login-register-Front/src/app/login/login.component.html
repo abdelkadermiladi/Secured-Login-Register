@@ -1,1 +1,25 @@
-<p>login works!</p>
+
+<label for="username">Username:</label>
+<input id="username" type="text" [(ngModel)]="username" />
+<br>
+
+<label for="password">Password:</label>
+<input id="password" type="password" [(ngModel)]="password" />
+<br>
+
+<button (click)="login()">Login</button>
+<br>
+---------------------------------------------------
+<br>
+<label for="registerUsername">Register Username:</label>
+<input id="registerUsername" type="text" [(ngModel)]="registerUsername" />
+<br>
+
+<label for="registerPassword">Register Password:</label>
+<input id="registerPassword" type="password" [(ngModel)]="registerPassword" />
+<br>
+
+<label for="gender">Gender:</label>
+<input id="registerGender" type="text" [(ngModel)]="registerGender" />
+<br>
+<button (click)="register()">Register</button>

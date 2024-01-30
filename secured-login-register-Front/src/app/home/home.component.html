@@ -1,0 +1,17 @@
+<div>
+    <h2>Welcome, {{ username }}!</h2>
+    
+    <div *ngIf="gender">
+      <p>Your gender is: {{ gender }}</p>
+    </div>
+  
+    <div *ngIf="otherUsersNames.length > 0">
+      <h3>Other Users:</h3>
+      <ul>
+        <li *ngFor="let user of otherUsersNames">{{ user }}</li>
+      </ul>
+    </div>
+  
+    <button (click)="logout()">Logout</button>
+  </div>
+  
